@@ -1,0 +1,12 @@
+#experience-item {
+    margin: 40px;
+}
+
+#exp-descr-list {
+    background-color: white;
+}
+
+#exp-descr-item {
+    background-color: white;
+    list-style-type: disc;
+}
