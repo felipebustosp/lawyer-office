@@ -1,6 +1,7 @@
 import Experience from '../Experience/Experience';
 import Navbar from '../Navbar/Navbar';
 import Presentation from '../Presentation/Presentation';
+import Contact from '../contact/Contact';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <main className='App-main'>
         <Presentation />
         <Experience />
+        <Contact />
       </main>
     </div>
   );
