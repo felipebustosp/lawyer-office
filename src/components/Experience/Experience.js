@@ -3,7 +3,6 @@ import React from "react";
 import data from '../../resources/experience.env.json';
 import ExperienceItem from "./ExperienceItem";
 import '../Experience/experience.css';
-import NavbarItem from "../Navbar/NavbarItem";
 
 const Experience = () => {
 

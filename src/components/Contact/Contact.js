@@ -1,16 +1,17 @@
 import React from "react";
-
 import data from '../../resources/contact.env.json';
+
+import '../Contact/contact.css';
 
 const Contact = () => {
     return (
         <div id="contact-container">
-            <h3>{data["contact.title.text"]}</h3>
-            <p>{data["contact.email.key"]}: {data["contact.email.value.text"]}</p>
-            <p>{data["contact.phone.key"]}: {data["contact.phone.value.text"]}</p>
-            <h4>{data["contact.section.message.title"]}</h4>
+            <h2>{data["contact.title.text"]}</h2>
+            <p>{data["contact.email.key"]} {data["contact.email.value.text"]}</p>
+            <p>{data["contact.phone.key"]} {data["contact.phone.value.text"]}</p>
+            <h3>{data["contact.section.message.title"]}</h3>
             <section id="user-info">
-                <label>
+                <label class="inline">
                     {data["contact.section.message.user.name.label"]}
                     <input 
                         name="user-name"
@@ -19,7 +20,7 @@ const Contact = () => {
                     />                    
                 </label>
 
-                <label>
+                <label class="inline">
                     {data["contact.section.message.user.email.label"]}
                     <input 
                         name="user-email"
@@ -28,7 +29,7 @@ const Contact = () => {
                     />
                 </label>
 
-                <label>
+                <label class="inline">
                     {data["contact.section.message.user.phone.label"]}
                     <input 
                         name="user-phone"
@@ -47,7 +48,7 @@ const Contact = () => {
                     />
                 </label>
 
-                <button value={data["conteact.section.message.user.description.send"]}></button>
+                <button >{data["conteact.section.message.user.description.send"]}</button>
                 
             </section>
         </div>
