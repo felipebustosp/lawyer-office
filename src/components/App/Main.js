@@ -3,13 +3,13 @@ import Navbar from '../Navbar/Navbar';
 import Presentation from '../Presentation/Presentation';
 import Contact from '../contact/Contact';
 
-function App() {
+function Main() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Main">
+      <header className="Main-header">
         <Navbar />
       </header>
-      <main className='App-main'>
+      <main className='Main-main'>
         <Presentation />
         <Experience />
         <Contact />
@@ -18,5 +18,5 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
 
