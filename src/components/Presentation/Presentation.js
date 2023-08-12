@@ -1,15 +1,15 @@
 import React from "react";
-import data from '../../resources/presentation.env.json';
-import image1 from '../../img/image_1.png';
 
+import BackgroundImage from '../Utils/BackgroundImage';
+
+import data from '../../resources/presentation.env.json';
 import './presentation.css';
+import image from '../../img/image_1.png';
 
 const Presentation = () => {
     return (
         <div id="presentation">
-            <div id="presentation-img">
-                <img src={image1} alt=""/>
-            </div>
+            <BackgroundImage src={image} />
             <div id="presentation-container">                   
                     <h1>{data["presentation.title.name.text"]}</h1>
                     <h2>{data["presentation.title.degree.text"]}</h2>

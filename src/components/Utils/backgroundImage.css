@@ -1,0 +1,13 @@
+#background-img {
+    background-color: #cccccc;
+    background-image: url('../../img/image_1.png');
+    background-position: center center;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-repeat: repeat-x repeat-y;
+    background-position: center;
+    background-size: cover; 
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
