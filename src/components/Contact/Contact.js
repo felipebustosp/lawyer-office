@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import BackgroundImage from '../Utils/BackgroundImage';
 
 import data from '../../resources/contact.env.json';
 import image from '../../img/image_1.png';
 import '../Contact/contact.css';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    return (
 
+    const [message, setMessage] = useState('');
+    const serviceId = "service_ci7p5wt";
+    const templateId = "template_8snok06";
+    const publicKey = "9fO5K9CB_NKJxqzDQ";
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm(serviceId,templateId, form.current,publicKey)
+            .then(
+                (result) => {
+                    setMessage(data["contact.section.message.user.description.send.success"]);
+                    console.log(result);
+                }, 
+                (error) => {
+                    setMessage(data["contact.section.message.user.description.send.error"]);
+                    console.error(error);
+
+                }
+            );
+    };
+
+    return (
         <div id="contact">
             <BackgroundImage src={image} />
             <div id="contact-container">
@@ -17,7 +39,7 @@ const Contact = () => {
                     <p id="contact-phone">{data["contact.phone.key"]} {data["contact.phone.value.text"]}</p>
                     </div>
                 <h3>{data["contact.section.message.title"]}</h3>
-                <div id="user-info">
+                <form ref={form} onSubmit={sendEmail} id="user-info">
                     <label class="inline">
                         {data["contact.section.message.user.name.label"]}
                         <input
@@ -55,9 +77,9 @@ const Contact = () => {
                         />
                     </label>
 
-                    <button >{data["conteact.section.message.user.description.send"]}</button>
-
-                </div>
+                    <button >{data["contact.section.message.user.description.send"]}</button>
+                    <p id="email-output">{message}</p>
+                </form>
             </div>
         </div>
     );
